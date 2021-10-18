@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-6">
+        <i class="fas fa-stream"></i>
+        Listagem de Clientes
+      </h1>
+      <hr />
+      <a style="margin-bottom: 15px" class="btn btn-dark" routerLink="cadastrar"
+        >Novo</a
+      >
+      <table class="table table-hover">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Ativo</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>
+              <i
+                *ngIf="cliente.ativo"
+                class="fas fa-thumbs-up text-success"
+              ></i>
+              <i
+                *ngIf="!cliente.ativo"
+                class="fas fa-thumbs-down text-danger"
+              ></i>
+            </td>
+            <td>
+              <a
+                [routerLink]="['editar', cliente.id]"
+                class="btn btn-dark btn-sm"
+                >Editar</a
+              >
+              <a
+                (click)="confirmar(cliente.id)"
+                class="btn btn-danger btn-sm mx-1"
+                >Remover</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="loading" class="d-flex justify-content-center">
+        <div
+          class="spinner-grow"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-6">
+        <i class="fas fa-stream"></i>
+        {{ formValue.get('id')?.value ? 'Edição': 'Cadastro' }} de Cliente
+      </h1>
+      <hr />
+      <form [formGroup]="formValue" (ngSubmit)="enviar()">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput1"
+            placeholder="Rafael"
+            formControlName="nome">
+          <label for="floatingInput">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput0"
+            placeholder="11122233344"
+            formControlName="cpf">
+          <label for="floatingInput">CPF</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput2"
+            placeholder="name@example.com"
+            formControlName="email">
+          <label for="floatingInput">E-mail</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Observação"
+            id="floatingTextarea"
+            formControlName="observacoes"></textarea>
+          <label for="floatingTextarea">Observações</label>
+        </div>
+        <a
+          style="margin-right: 15px;"
+          routerLink="/clientes"
+          class="btn btn-dark">Voltar</a>
+        <button
+          [disabled]="!formValue.valid"
+          type="submit"
+          class="btn btn-dark">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
