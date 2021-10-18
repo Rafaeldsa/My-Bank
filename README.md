@@ -72,5 +72,5 @@ Go to http://localhost:4200/ to see the result.
 
 # :bug: Issues
 
-Feel free to **file a new issue** with a respective title and description on the the [MyBank](https://github.com/Rafaeldsa/Proffy/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
+Feel free to **file a new issue** with a respective title and description on the the [MyBank](https://github.com/Rafaeldsa/My-Bank/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
